@@ -4,10 +4,10 @@
 .brands {
   @include container;
 
-  padding-block: 54px 28px;
+  padding-block: 61px 36px;
 
   &__title {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 42px;
     text-align: center;
@@ -16,9 +16,10 @@
 
   &__list {
     display: flex;
-    justify-content: center;
     gap: 43px;
-    margin-top: 34px;
+    // no layout a lista não é centralizada: começa 22px após a margem do container
+    padding-left: 22px;
+    margin-top: 31px;
   }
 
   &__link {
@@ -33,7 +34,6 @@
 
   @media (max-width: $breakpoint-xl) {
     &__list {
-      justify-content: flex-start;
       gap: 24px;
       margin-inline: -$container-gutter;
       padding: 8px $container-gutter 24px;

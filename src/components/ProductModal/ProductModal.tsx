@@ -46,15 +46,15 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
             aria-label="Fechar"
             onClick={onClose}
           >
-            <Icon name="close" size={22} />
+            <Icon name="close" size={28} strokeWidth={1.7} />
           </button>
 
           <img
             className="product-modal__photo"
             src={product.photo}
             alt={product.productName}
-            width={219}
-            height={219}
+            width={232}
+            height={232}
           />
 
           <div className="product-modal__info">
@@ -75,7 +75,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
                   disabled={quantity === 1}
                   onClick={() => setQuantity((current) => current - 1)}
                 >
-                  <Icon name="minus" size={18} />
+                  <Icon name="minus" size={20} />
                 </button>
                 <output aria-live="polite">{String(quantity).padStart(2, '0')}</output>
                 <button
@@ -83,7 +83,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
                   aria-label="Aumentar quantidade"
                   onClick={() => setQuantity((current) => current + 1)}
                 >
-                  <Icon name="plus" size={18} />
+                  <Icon name="plus" size={20} strokeWidth={2} />
                 </button>
               </div>
 

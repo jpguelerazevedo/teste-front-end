@@ -2,7 +2,7 @@
 @use '../../styles/mixins' as *;
 
 .newsletter {
-  margin-top: 28px;
+  margin-top: 57px;
   color: $color-white;
   background: $color-navy;
 
@@ -13,7 +13,7 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 32px;
-    padding-block: 42px 46px;
+    padding-block: 40px 42px;
   }
 
   &__intro {
@@ -22,7 +22,7 @@
 
   &__title {
     font-family: $font-display;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 600;
     line-height: 36px;
   }
@@ -38,13 +38,13 @@
     display: grid;
     grid-template-columns: 233px 233px 157px;
     gap: 6px 8px;
-    margin-top: 4px;
+    margin: 6px 2px 0 0;
   }
 
   &__input {
     height: 42px;
     padding: 0 24px;
-    font-size: 13px;
+    font-size: 14px;
     color: $color-text;
     background: $color-white;
     border: 0;
@@ -60,7 +60,7 @@
     @include yellow-button;
 
     height: 42px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
     border-radius: 6px;
@@ -75,8 +75,8 @@
     cursor: pointer;
 
     input {
-      width: 13px;
-      height: 13px;
+      width: 14px;
+      height: 14px;
       margin: 0;
     }
   }

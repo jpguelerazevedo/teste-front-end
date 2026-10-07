@@ -13,14 +13,14 @@
     justify-content: center;
     gap: 120px;
     height: 32px;
-    font-size: 14px;
+    font-size: 12px;
     color: $color-text-muted;
   }
 
   &__benefit {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 9px;
     white-space: nowrap;
 
     strong {
@@ -50,7 +50,7 @@
     position: relative;
     flex: 0 1 630px;
     margin: 0 auto;
-    margin-left: clamp(24px, 14.5%, 186px);
+    margin-left: clamp(24px, 14.5%, 187px);
 
     input {
       width: 100%;

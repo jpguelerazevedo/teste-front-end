@@ -19,7 +19,7 @@
     color: $color-white;
     background:
       linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0.45) 100%),
-      url('../../assets/partners.jpg') center / cover no-repeat,
+      url('../../assets/partners.jpg') 42% 16% / 140% auto no-repeat,
       $color-navy;
     border-radius: 20px;
   }
@@ -44,7 +44,7 @@
     width: 145px;
     height: 47px;
     margin-top: 24px;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }

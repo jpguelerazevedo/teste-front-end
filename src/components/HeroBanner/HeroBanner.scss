@@ -2,13 +2,12 @@
 @use '../../styles/mixins' as *;
 
 .hero {
-  display: flex;
-  align-items: center;
   height: 390px;
+  padding-top: 79px;
   color: $color-white;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0.1) 100%),
-    url('../../assets/banner.jpg') 0 30% / 125% auto no-repeat,
+    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0) 100%),
+    url('../../assets/banner.jpg') 0 35% / 125% auto no-repeat,
     $color-navy;
 
   &__content {
@@ -19,14 +18,14 @@
     max-width: 620px;
     font-size: 48px;
     font-weight: 600;
-    line-height: 48px;
+    line-height: 50px;
   }
 
   &__subtitle {
-    margin-top: 18px;
-    font-size: 28px;
+    margin-top: 17px;
+    font-size: 32px;
     font-weight: 300;
-    line-height: 42px;
+    line-height: 48px;
 
     strong {
       font-weight: 700;
@@ -41,13 +40,14 @@
     place-items: center;
     width: 206px;
     height: 50px;
-    margin: 40px 0 0 7px;
-    font-size: 14px;
+    margin: 41px 0 0 7px;
+    font-size: 16px;
     font-weight: 600;
   }
 
   @media (max-width: $breakpoint-md) {
     height: 320px;
+    padding-top: 48px;
     background-size: auto, cover, auto;
     background-position: 0 0, center, 0 0;
 

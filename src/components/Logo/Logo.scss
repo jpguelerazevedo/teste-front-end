@@ -4,9 +4,9 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  height: 1.72em;
+  height: 1.455em;
   font-family: $font-display;
-  font-size: 28px;
+  font-size: 28.5px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -16,8 +16,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 1.72em;
-    height: 1.72em;
+    width: 1.455em;
+    height: 1.455em;
     margin-right: -0.04em;
     padding-right: 0.06em;
     color: $color-white;
@@ -26,10 +26,10 @@
   }
 
   &--sm {
-    font-size: 22px;
+    font-size: 24.3px;
   }
 
   &--lg {
-    font-size: 29px;
+    font-size: 34px;
   }
 }

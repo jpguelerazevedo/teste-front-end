@@ -16,17 +16,17 @@
   &__content {
     position: relative;
     display: flex;
-    align-items: center;
-    min-height: 298px;
-    padding: 40px 68px 38px 70px;
+    align-items: flex-start;
+    min-height: 299px;
+    padding: 37px 68px 30px 63px;
   }
 
   &__close {
     @include button-reset;
 
     position: absolute;
-    top: 11px;
-    right: 26px;
+    top: 10px;
+    right: 24px;
     display: grid;
     place-items: center;
     width: 24px;
@@ -35,16 +35,16 @@
   }
 
   &__photo {
-    flex: 0 0 219px;
-    width: 219px;
-    height: 219px;
+    flex: 0 0 232px;
+    width: 232px;
+    height: 232px;
     object-fit: contain;
   }
 
   &__info {
     flex: 1;
     min-width: 0;
-    margin-left: 101px;
+    margin: 21px 0 0 95px;
   }
 
   &__name {
@@ -56,7 +56,7 @@
   }
 
   &__price {
-    margin-top: 4px;
+    margin-top: 5px;
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
@@ -65,21 +65,24 @@
 
   &__description {
     max-width: 290px;
-    margin-top: 32px;
+    // reserva duas linhas, como no layout, para o restante não subir com descrições curtas
+    min-height: 30px;
+    margin-top: 24px;
     font-family: $font-secondary;
     font-size: 11px;
-    line-height: 16px;
+    line-height: 15px;
     letter-spacing: 0.06em;
     color: $color-text-muted;
   }
 
   &__more {
-    display: inline-block;
-    margin-top: 6px;
+    display: block;
+    width: fit-content;
+    margin-top: 4px;
     font-family: $font-secondary;
     font-size: 11px;
     font-weight: 600;
-    line-height: 16px;
+    line-height: 15px;
     letter-spacing: 0.04em;
     color: $color-accent;
 
@@ -91,7 +94,7 @@
   &__actions {
     display: flex;
     gap: 12px;
-    margin-top: 28px;
+    margin-top: 29px;
   }
 
   &__quantity {
@@ -111,7 +114,7 @@
       place-items: center;
       width: 28px;
       height: 100%;
-      color: $color-text;
+      color: $color-navy;
 
       &:disabled {
         color: $color-text-muted;
@@ -120,7 +123,8 @@
     }
 
     output {
-      font-size: 14px;
+      font-size: 16px;
+      color: $color-navy;
     }
   }
 
@@ -130,7 +134,7 @@
     flex: 1;
     max-width: 188px;
     height: 36px;
-    font-size: 13px;
+    font-size: 14px;
     text-transform: uppercase;
   }
 
@@ -140,13 +144,14 @@
     }
 
     &__info {
-      margin-left: 32px;
+      margin-left: 24px;
     }
   }
 
   @media (max-width: $breakpoint-sm) {
     &__content {
       flex-direction: column;
+      align-items: center;
     }
 
     &__photo {

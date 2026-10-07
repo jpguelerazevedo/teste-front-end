@@ -16,15 +16,15 @@
 
   &__about {
     flex: 0 0 445px;
-    padding-block: 18px 20px;
+    padding-block: 19px;
     border-right: 1px solid $color-border;
 
     p {
       max-width: 300px;
-      margin-top: 22px;
+      margin-top: 18px;
       font-size: 14px;
       font-weight: 300;
-      line-height: 22px;
+      line-height: 21px;
       color: $color-text;
     }
   }
@@ -32,7 +32,7 @@
   &__social {
     display: flex;
     gap: 22px;
-    margin-top: 24px;
+    margin-top: 25px;
     color: $color-text;
 
     a {
@@ -46,25 +46,26 @@
   }
 
   &__groups {
-    display: flex;
-    gap: 100px;
-    padding: 40px 0 0 88px;
+    display: grid;
+    grid-template-columns: 221px 251px auto;
+    align-content: start;
+    padding: 38px 0 0 88px;
   }
 
   &__group-title {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 24px;
   }
 
   &__links {
     display: grid;
     gap: 14px;
-    margin-top: 12px;
+    margin-top: 14px;
     font-family: $font-secondary;
     font-size: 14px;
     line-height: 18px;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.01em;
 
     a:hover {
       color: $color-accent;
@@ -73,9 +74,9 @@
 
   &__copyright {
     padding: 14px $container-gutter;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 300;
-    line-height: 18px;
+    line-height: 20px;
     text-align: center;
   }
 
@@ -85,7 +86,8 @@
     }
 
     &__groups {
-      gap: 40px;
+      grid-template-columns: repeat(3, auto);
+      gap: 32px;
       padding-left: 40px;
     }
   }
@@ -102,7 +104,8 @@
     }
 
     &__groups {
-      flex-wrap: wrap;
+      grid-template-columns: repeat(2, auto);
+      justify-content: start;
       padding: 32px 0 0;
     }
   }
