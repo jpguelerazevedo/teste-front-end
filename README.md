@@ -48,6 +48,10 @@ O projeto não possui testes automatizados; a checagem de tipos roda junto com `
 
 A API da Econverse não envia cabeçalhos CORS, então o navegador bloqueia a chamada direta. Por isso as requisições são feitas para `/api`, que o Vite redireciona para a Econverse (veja [vite.config.ts](vite.config.ts)). O proxy funciona em `npm run dev` e `npm run preview`; em uma hospedagem estática é preciso configurar um redirecionamento equivalente.
 
+## Sobre o preço riscado dos cards
+
+O layout mostra um preço antigo riscado ("R$ 30,90") acima do preço atual, mas o JSON traz apenas um campo `price` por produto. Para não exibir um desconto inventado, os cards mostram somente o preço real; o espaço do preço riscado foi mantido para preservar as medidas do layout.
+
 ## Estrutura
 
 ```
