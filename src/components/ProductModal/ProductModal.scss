@@ -1,0 +1,165 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.product-modal {
+  width: min(770px, calc(100% - 32px));
+  padding: 0;
+  color: $color-text;
+  background: $color-white;
+  border: 0;
+  border-radius: 8px;
+
+  &::backdrop {
+    background: $color-overlay;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 298px;
+    padding: 40px 68px 38px 70px;
+  }
+
+  &__close {
+    @include button-reset;
+
+    position: absolute;
+    top: 11px;
+    right: 26px;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    color: $color-text-footer;
+  }
+
+  &__photo {
+    flex: 0 0 219px;
+    width: 219px;
+    height: 219px;
+    object-fit: contain;
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0;
+    margin-left: 101px;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    margin-top: 4px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+  }
+
+  &__description {
+    max-width: 290px;
+    margin-top: 32px;
+    font-family: $font-secondary;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.06em;
+    color: $color-text-muted;
+  }
+
+  &__more {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: $font-secondary;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: $color-accent;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  &__quantity {
+    display: flex;
+    flex: 0 0 110px;
+    align-items: center;
+    justify-content: space-between;
+    height: 36px;
+    padding: 0 6px;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+
+    button {
+      @include button-reset;
+
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 100%;
+      color: $color-text;
+
+      &:disabled {
+        color: $color-text-muted;
+        cursor: not-allowed;
+      }
+    }
+
+    output {
+      font-size: 14px;
+    }
+  }
+
+  &__buy {
+    @include yellow-button;
+
+    flex: 1;
+    max-width: 188px;
+    height: 36px;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    &__content {
+      padding: 40px 24px 28px;
+    }
+
+    &__info {
+      margin-left: 32px;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__photo {
+      flex-basis: auto;
+    }
+
+    &__info {
+      width: 100%;
+      margin: 16px 0 0;
+    }
+
+    &__buy {
+      max-width: none;
+    }
+  }
+}

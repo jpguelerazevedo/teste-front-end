@@ -1,0 +1,180 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+$gap: 19px;
+// folga para a sombra dos cards não ser cortada pelo overflow do carrossel
+$shadow-space: 12px;
+
+.showcase {
+  @include container;
+
+  padding-block: 33px 21px;
+  scroll-margin-top: 16px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 0 70px;
+
+    &::before,
+    &::after {
+      flex: 1;
+      height: 1px;
+      background: $color-border;
+      content: '';
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    color: $color-primary;
+  }
+
+  &__tabs {
+    display: flex;
+    margin-top: 2px;
+    overflow-x: auto;
+    border: 1px solid $color-border;
+  }
+
+  &__tab-item {
+    flex: 1 0 0;
+    min-width: max-content;
+
+    & + & {
+      border-left: 1px solid $color-border;
+    }
+  }
+
+  &__tab {
+    @include button-reset;
+
+    width: 100%;
+    height: 38px;
+    padding: 0 16px;
+    font-size: 16px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: $color-text;
+
+    &[aria-current='true'] {
+      font-weight: 700;
+      color: $color-primary;
+    }
+  }
+
+  &__see-all {
+    display: block;
+    width: fit-content;
+    margin: 2px auto 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__feedback {
+    padding: 120px 0;
+    text-align: center;
+  }
+
+  &__carousel {
+    position: relative;
+    margin-top: 24px - $shadow-space;
+    padding: 0 5px;
+  }
+
+  &__track {
+    display: grid;
+    grid-auto-columns: calc((100% - #{$gap * 3}) / 4);
+    grid-auto-flow: column;
+    gap: $gap;
+    margin: 0 (-$shadow-space);
+    padding: $shadow-space;
+    overflow-x: auto;
+    scroll-padding: 0 $shadow-space;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__item {
+    scroll-snap-align: start;
+  }
+
+  &__arrow {
+    @include button-reset;
+
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: $color-text;
+    background: $color-white;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transform: translateY(-50%);
+
+    &--prev {
+      left: -43px;
+    }
+
+    &--next {
+      right: -43px;
+    }
+  }
+
+  @media (max-width: $breakpoint-xl) {
+    &__arrow--prev {
+      left: -8px;
+    }
+
+    &__arrow--next {
+      right: -8px;
+    }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    &__header {
+      padding: 0;
+    }
+
+    &__track {
+      grid-auto-columns: calc((100% - #{$gap * 2}) / 3);
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    &__title {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    &__track {
+      grid-auto-columns: calc((100% - #{$gap}) / 2);
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    &__header {
+      gap: 16px;
+    }
+
+    &__track {
+      grid-auto-columns: 100%;
+    }
+  }
+}

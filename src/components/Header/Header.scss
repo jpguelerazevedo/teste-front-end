@@ -1,0 +1,175 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  position: relative;
+  z-index: 1;
+  background: $color-white;
+
+  &__benefits {
+    @include container;
+
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    height: 32px;
+    font-size: 14px;
+    color: $color-text-muted;
+  }
+
+  &__benefit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+
+    strong {
+      font-weight: 600;
+      color: $color-accent;
+    }
+  }
+
+  &__main {
+    @include container;
+
+    display: flex;
+    align-items: center;
+    height: 72px;
+    background:
+      linear-gradient($color-surface, $color-surface) top / calc(100% - #{$container-gutter * 2}) 1px
+        no-repeat,
+      linear-gradient($color-surface, $color-surface) bottom / calc(100% - #{$container-gutter * 2})
+        1px no-repeat;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  &__search {
+    position: relative;
+    flex: 0 1 630px;
+    margin: 0 auto;
+    margin-left: clamp(24px, 14.5%, 186px);
+
+    input {
+      width: 100%;
+      height: 48px;
+      padding: 0 64px 0 16px;
+      font-size: 14px;
+      color: $color-text;
+      background: $color-search;
+      border: 0;
+      border-radius: 8px;
+
+      &::placeholder {
+        color: $color-text-muted;
+        opacity: 1;
+      }
+
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
+    }
+
+    button {
+      @include button-reset;
+
+      position: absolute;
+      top: 0;
+      right: 24px;
+      display: grid;
+      place-items: center;
+      height: 100%;
+      color: $color-text-muted;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 30px;
+    color: $color-text-muted;
+
+    a {
+      display: block;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__nav {
+    @include container;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      padding: 0 70px;
+      box-shadow: 0 6px 10px -6px rgba(0, 0, 0, 0.12);
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: $color-text-muted;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__nav-link--highlight {
+    color: $color-accent !important;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    &__benefits {
+      gap: 32px;
+    }
+
+    &__search {
+      margin-inline: 24px;
+    }
+
+    &__actions {
+      gap: 16px;
+    }
+
+    &__nav ul {
+      gap: 24px;
+      padding: 0 8px;
+      overflow-x: auto;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    &__benefits {
+      justify-content: flex-start;
+      overflow-x: auto;
+    }
+
+    &__main {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      height: auto;
+      padding-block: 12px;
+    }
+
+    &__search {
+      flex: 1 0 100%;
+      order: 3;
+      margin: 12px 0 0;
+    }
+  }
+}

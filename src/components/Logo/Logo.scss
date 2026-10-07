@@ -1,0 +1,35 @@
+@use '../../styles/variables' as *;
+
+// Todas as medidas derivam do font-size, então o logo escala por modificador.
+.logo {
+  display: inline-flex;
+  align-items: center;
+  height: 1.72em;
+  font-family: $font-display;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: $color-navy;
+
+  &__mark {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 1.72em;
+    height: 1.72em;
+    margin-right: -0.04em;
+    padding-right: 0.06em;
+    color: $color-white;
+    background: $color-yellow;
+    border-radius: 50%;
+  }
+
+  &--sm {
+    font-size: 22px;
+  }
+
+  &--lg {
+    font-size: 29px;
+  }
+}

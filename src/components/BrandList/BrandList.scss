@@ -1,0 +1,48 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.brands {
+  @include container;
+
+  padding-block: 54px 28px;
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+    color: $color-primary;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 43px;
+    margin-top: 34px;
+  }
+
+  &__link {
+    display: grid;
+    place-items: center;
+    width: 210px;
+    height: 210px;
+    background: $color-white;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: $breakpoint-xl) {
+    &__list {
+      justify-content: flex-start;
+      gap: 24px;
+      margin-inline: -$container-gutter;
+      padding: 8px $container-gutter 24px;
+      overflow-x: auto;
+    }
+
+    &__link {
+      width: 170px;
+      height: 170px;
+    }
+  }
+}

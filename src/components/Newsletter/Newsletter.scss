@@ -1,0 +1,96 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.newsletter {
+  margin-top: 28px;
+  color: $color-white;
+  background: $color-navy;
+
+  &__container {
+    @include container;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    padding-block: 42px 46px;
+  }
+
+  &__intro {
+    max-width: 520px;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 36px;
+  }
+
+  &__text {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 233px 233px 157px;
+    gap: 6px 8px;
+    margin-top: 4px;
+  }
+
+  &__input {
+    height: 42px;
+    padding: 0 24px;
+    font-size: 13px;
+    color: $color-text;
+    background: $color-white;
+    border: 0;
+    border-radius: 6px;
+
+    &::placeholder {
+      color: $color-text;
+      opacity: 1;
+    }
+  }
+
+  &__submit {
+    @include yellow-button;
+
+    height: 42px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 6px;
+  }
+
+  &__terms {
+    display: flex;
+    grid-column: 1 / -1;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    cursor: pointer;
+
+    input {
+      width: 13px;
+      height: 13px;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    &__container {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    &__form {
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+  }
+}

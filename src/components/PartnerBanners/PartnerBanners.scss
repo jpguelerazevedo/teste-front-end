@@ -1,0 +1,66 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.partners {
+  @include container;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-block: 57px 33px;
+
+  &__banner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 350px;
+    padding: 0 44px 40px;
+    color: $color-white;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0.45) 100%),
+      url('../../assets/partners.jpg') center / cover no-repeat,
+      $color-navy;
+    border-radius: 20px;
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+  }
+
+  &__text {
+    max-width: 180px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__cta {
+    @include yellow-button;
+
+    display: grid;
+    place-items: center;
+    width: 145px;
+    height: 47px;
+    margin-top: 24px;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    padding-block: 32px;
+
+    &__banner {
+      height: 260px;
+      padding: 0 24px 24px;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 44px;
+    }
+  }
+}
